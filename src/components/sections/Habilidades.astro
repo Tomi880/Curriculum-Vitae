@@ -1,0 +1,141 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Card from "../ui/Card.astro";
+import Badge from "../ui/Badge.astro";
+---
+
+<section id="habilidades" class="section habilidades bg-checker--subtle" aria-labelledby="habilidades-title">
+  <div class="checker-vignette" aria-hidden="true"></div>
+  <div class="container" style="position:relative; z-index:2">
+    <SectionTitle
+      eyebrow="Habilidades"
+      title="Stack técnico y humano"
+      subtitle="Lo que traigo a la mesa: desde el bit hasta la conversación con el cliente."
+      accent="blue"
+    />
+
+    <div class="grid grid--3" id="habilidades-title">
+      <Card accent="red">
+        <div class="skill__head">
+          <span class="skill__icon skill__icon--red" aria-hidden="true">◈</span>
+          <h3 class="skill__title">Técnicas</h3>
+        </div>
+        <p class="skill__desc">Herramientas y lenguajes con los que construyo y rompo (para luego arreglar) sistemas.</p>
+        <div class="skill__badges">
+          <Badge variant="yellow">Python</Badge>
+          <Badge>JavaScript</Badge>
+          <Badge>SQL Server</Badge>
+          <Badge>Laravel / PHP</Badge>
+          <Badge>Node.js</Badge>
+          <Badge>Git</Badge>
+          <Badge>Nmap</Badge>
+          <Badge>Metasploit</Badge>
+          <Badge>Nessus</Badge>
+          <Badge>msfvenom</Badge>
+          <Badge>Linux</Badge>
+          <Badge>MySQL</Badge>
+          <Badge variant="blue">Astro</Badge>
+          <Badge>HTML / CSS</Badge>
+          <Badge>PHP 5.3.29</Badge>
+          <Badge>CakePHP 1.2</Badge>
+          <Badge>jQuery 1.2.3</Badge>
+          <Badge>ETL</Badge>
+          <Badge variant="red">Harness</Badge>
+          <Badge variant="red">SDD</Badge>
+          <Badge variant="red">MCP</Badge>
+          <Badge variant="red">Opencode Plugins</Badge>
+        </div>
+      </Card>
+
+      <Card accent="blue">
+        <div class="skill__head">
+          <span class="skill__icon skill__icon--blue" aria-hidden="true">◎</span>
+          <h3 class="skill__title">Blandas</h3>
+        </div>
+        <p class="skill__desc">Lo que no se compila pero hace que el proyecto llegue a producción.</p>
+        <ul class="skill__list">
+          <li>Comunicación efectiva</li>
+          <li>Trabajo en equipo</li>
+          <li>Adaptabilidad</li>
+          <li>Proactividad</li>
+          <li>Responsabilidad</li>
+          <li>Trabajo bajo presión</li>
+          <li>Resolución de problemas</li>
+          <li>Pensamiento analítico</li>
+        </ul>
+      </Card>
+
+      <Card accent="yellow">
+        <div class="skill__head">
+          <span class="skill__icon skill__icon--yellow" aria-hidden="true">✦</span>
+          <h3 class="skill__title">Idiomas</h3>
+        </div>
+        <p class="skill__desc">Para documentar, leer RFCs y no perderme en calls.</p>
+        <div class="lang">
+          <div class="lang__row">
+            <span class="lang__name">Español</span>
+            <Badge variant="yellow">Nativo</Badge>
+          </div>
+          <div class="lang__bar lang__bar--full" aria-hidden="true"><i></i></div>
+        </div>
+        <div class="lang">
+          <div class="lang__row">
+            <span class="lang__name">Inglés</span>
+            <Badge variant="blue">B1 — TOEIC</Badge>
+          </div>
+          <div class="lang__bar" aria-hidden="true"><i style="width:60%"></i></div>
+          <p class="lang__note">Lectura técnica fluida · Conversación intermedia</p>
+        </div>
+
+        <div class="skill__extra">
+          <h4 class="skill__extra-title">Stack actual — Kastor</h4>
+          <p class="skill__extra-text">Legacy productivo con criterio de mantención: cambios mínimos, máximo impacto, sin romper lo que ya funciona para miles de comunidades.</p>
+        </div>
+      </Card>
+    </div>
+  </div>
+</section>
+
+<style>
+  .habilidades { position: relative; overflow: clip; }
+  .skill__head{ display:flex; align-items:center; gap: var(--s-3); margin-bottom: var(--s-3); }
+  .skill__icon{
+    width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
+    font-size:1.1rem; border:1px solid var(--c-border); flex-shrink:0;
+  }
+  .skill__icon--red{ background: var(--c-red); color: var(--c-white); border-color: var(--c-red); }
+  .skill__icon--blue{ background: var(--c-blue); color: var(--c-white); border-color: var(--c-blue); }
+  .skill__icon--yellow{ background: var(--c-yellow); color: var(--c-bg-900); border-color: var(--c-yellow); }
+  .skill__title{ font-family: var(--ff-display); font-size:1.15rem; color: var(--c-white); }
+  .skill__desc{ font-size:0.88rem; color: var(--c-muted); line-height:1.5; margin-bottom: var(--s-4); }
+  .skill__badges{ display:flex; flex-wrap:wrap; gap:6px; }
+  .skill__list{
+    list-style:none; padding:0; display:grid; gap:8px;
+  }
+  .skill__list li{
+    position:relative; padding-left:18px; font-size:0.9rem; color: var(--c-text); line-height:1.4;
+  }
+  .skill__list li::before{
+    content:""; position:absolute; left:0; top:7px; width:8px; height:8px; border-radius:50%;
+    background: var(--c-blue); border:1px solid var(--c-white);
+  }
+  .skill__list li:nth-child(2)::before{ background: var(--c-red); }
+  .skill__list li:nth-child(3)::before{ background: var(--c-yellow); }
+  .skill__list li:nth-child(4)::before{ background: var(--c-white); }
+
+  .lang{ margin-bottom: var(--s-4); }
+  .lang__row{ display:flex; align-items:center; justify-content:space-between; gap: var(--s-2); margin-bottom:8px; }
+  .lang__name{ font-weight:700; color: var(--c-white); font-size:0.95rem; }
+  .lang__bar{
+    height:8px; background: rgba(255,255,255,0.08); border-radius: var(--r-pill); overflow:hidden;
+    border:1px solid var(--c-border);
+  }
+  .lang__bar i{ display:block; height:100%; background: linear-gradient(90deg, var(--c-yellow), var(--c-yellow-dark)); border-radius: var(--r-pill); }
+  .lang__bar--full i{ width:100%; background: linear-gradient(90deg, var(--c-blue), var(--c-red)); }
+  .lang__note{ font-size:0.78rem; color: var(--c-muted); margin-top:6px; }
+  .skill__extra{
+    margin-top: var(--s-5); padding-top: var(--s-4); border-top:1px solid var(--c-border);
+  }
+  .skill__extra-title{ font-size:0.82rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color: var(--c-yellow); margin-bottom:6px; }
+  .skill__extra-text{ font-size:0.84rem; color: var(--c-muted); line-height:1.5; }
+</style>

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import ParticleCanvas from "../components/layout/ParticleCanvas.astro";
+import Hero from "../components/sections/Hero.astro";
+import SobreMi from "../components/sections/SobreMi.astro";
+import Recorrido from "../components/sections/Recorrido.astro";
+import Habilidades from "../components/sections/Habilidades.astro";
+import Proyectos from "../components/sections/Proyectos.astro";
+import Hablemos from "../components/sections/Hablemos.astro";
+---
+
+<BaseLayout>
+  <ParticleCanvas />
+  <Header />
+  <main id="main">
+    <Hero />
+    <SobreMi />
+    <Recorrido />
+    <Habilidades />
+    <Proyectos />
+    <Hablemos />
+  </main>
+  <Footer />
+</BaseLayout>

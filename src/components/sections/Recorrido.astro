@@ -1,0 +1,196 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import TimelineItem from "../ui/TimelineItem.astro";
+import Badge from "../ui/Badge.astro";
+---
+
+<section id="recorrido" class="section recorrido" aria-labelledby="recorrido-title">
+  <div class="container">
+    <SectionTitle
+      eyebrow="Recorrido"
+      title="Formación y experiencia cronológica"
+      subtitle="De la sala de clases al despliegue en MINSAL y al legacy productivo en Kastor — cada etapa sumando criterio técnico y de terreno."
+      accent="red"
+    />
+
+    <div class="timeline" id="recorrido-title">
+
+      <TimelineItem
+        period="Experiencia previa"
+        title="Operario de bodega"
+        place="Mtek"
+        description="Logística, control de stock y apoyo operativo. Experiencia que aportó disciplina, trabajo bajo presión y foco en procesos."
+        accent="yellow"
+        type="Experiencia"
+      />
+
+      <TimelineItem
+        period="2021 — 2024"
+        title="Ingeniería en Informática"
+        place="Duoc UC — Titulado"
+        description="Formación integral en desarrollo, redes, bases de datos y seguridad. Base para análisis de sistemas y automatización."
+        accent="blue"
+        type="Formación"
+      />
+
+      <TimelineItem
+        period="Ene — Mar 2024"
+        title="Práctica Laboral — Soporte TI"
+        place="Bricsa"
+        description="Soporte a usuarios, mantención de equipos, diagnóstico de incidencias y documentación de procedimientos."
+        accent="yellow"
+        type="Experiencia"
+      />
+
+      <TimelineItem
+        period="Nov 2024 — Ene 2025"
+        title="Práctica Profesional — TI / ETL / Tesis GPT"
+        place="Bricsa · Unysoft"
+        description="Desarrollo ETL para archivos BC3 (presupuestos de construcción) + tesis con integración API GPT, backend Laravel y Node.js con MySQL."
+        accent="red"
+        type="Experiencia"
+      >
+        <div class="timeline__tags">
+          <Badge variant="ghost">ETL</Badge>
+          <Badge variant="ghost">BC3</Badge>
+          <Badge variant="ghost">GPT API</Badge>
+          <Badge variant="ghost">Laravel</Badge>
+        </div>
+      </TimelineItem>
+
+      <TimelineItem
+        period="May — Sep 2025"
+        title="Soporte TIC"
+        place="Duoc UC"
+        description="Soporte técnico institucional, atención a docentes y estudiantes, gestión de incidencias y mantención de laboratorios."
+        accent="red"
+        type="Experiencia"
+      />
+
+      <TimelineItem
+        period="Oct — Dic 2025"
+        title="Instalación y renovación de equipos"
+        place="Hospital Sotero del Río / MINSAL"
+        description="Despliegue masivo de equipos HP, integración a dominio ministerial, migración de datos y hardening básico en ambiente hospitalario."
+        accent="blue"
+        type="Experiencia"
+      >
+        <div class="timeline__tags">
+          <Badge variant="ghost">Deploy masivo</Badge>
+          <Badge variant="ghost">HP</Badge>
+          <Badge variant="ghost">Active Directory</Badge>
+          <Badge variant="ghost">MINSAL</Badge>
+        </div>
+      </TimelineItem>
+
+      <TimelineItem
+        period="Dic 2025 — Ene 2026"
+        title="Análisis de datos"
+        place="LarrainVial"
+        description="Análisis comparativo Excel vs PDF, validación de consistencia, detección de discrepancias y reportería para toma de decisiones."
+        accent="blue"
+        type="Experiencia"
+      >
+        <div class="timeline__tags">
+          <Badge variant="ghost">Excel</Badge>
+          <Badge variant="ghost">PDF parsing</Badge>
+          <Badge variant="ghost">Validación</Badge>
+        </div>
+      </TimelineItem>
+
+      <TimelineItem
+        period="Actual · 6 meses"
+        title="Desarrollador FullStack"
+        place="Kastor — Plataforma comunidades"
+        description="Desarrollo y mantención de plataforma en PHP 5.3.29, CakePHP 1.2.0.6311-beta, jQuery 1.2.3 y MySQL 14.14. Módulos a medida, corrección de legacy y trabajo con agentes (Harness, SDD, MCP, Opencode)."
+        accent="yellow"
+        current={true}
+      >
+        <div class="timeline__tags">
+          <Badge variant="yellow">PHP 5.3.29</Badge>
+          <Badge variant="ghost">CakePHP 1.2</Badge>
+          <Badge variant="ghost">jQuery 1.2.3</Badge>
+          <Badge variant="ghost">MySQL</Badge>
+          <Badge variant="ghost">Harness</Badge>
+          <Badge variant="ghost">MCP</Badge>
+        </div>
+      </TimelineItem>
+
+      <div class="timeline__certs">
+        <h3 class="timeline__certs-title">Certificaciones</h3>
+        <div class="timeline__certs-grid">
+          <div class="cert">
+            <span class="cert__icon cert__icon--blue">Py</span>
+            <div>
+              <strong>Python Institute</strong>
+              <span>Entry-Level Certification</span>
+            </div>
+          </div>
+          <div class="cert">
+            <span class="cert__icon cert__icon--red">◈</span>
+            <div>
+              <strong>Udemy — React Avanzado</strong>
+              <span>Curso intensivo</span>
+            </div>
+          </div>
+          <div class="cert">
+            <span class="cert__icon cert__icon--yellow">⬢</span>
+            <div>
+              <strong>Udemy — Hacking Ético</strong>
+              <span>Ciberseguridad ofensiva</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .recorrido { background: var(--c-bg-900); }
+  .timeline {
+    position: relative;
+    max-width: 760px;
+    margin-inline: auto;
+  }
+  .timeline::before{
+    content:""; position:absolute; left:19px; top:0; bottom:0; width:2px;
+    background: repeating-linear-gradient(180deg, var(--c-border-strong) 0 6px, transparent 6px 12px);
+    opacity:0.6;
+  }
+  .timeline__tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top: var(--s-3); }
+  .timeline__certs{
+    margin-top: var(--s-8);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+    position: relative; overflow:hidden;
+  }
+  .timeline__certs::after{
+    content:""; position:absolute; right:-10px; bottom:-10px; width:120px; height:42px;
+    background: radial-gradient(circle, var(--c-yellow) 5.5px, transparent 6px) 0 0 / 18px 18px;
+    opacity:0.85;
+  }
+  .timeline__certs-title{
+    font-family: var(--ff-display); font-size:1rem; color: var(--c-white); margin-bottom: var(--s-4);
+  }
+  .timeline__certs-grid{ display:grid; gap: var(--s-4); }
+  @media (min-width: 640px){ .timeline__certs-grid{ grid-template-columns: repeat(3,1fr); } }
+  .cert{ display:flex; gap: var(--s-3); align-items:center; }
+  .cert__icon{
+    width:40px; height:40px; border-radius:10px; display:grid; place-items:center;
+    font-weight:800; font-size:0.9rem; flex-shrink:0; border:1px solid var(--c-border);
+  }
+  .cert__icon--blue{ background: var(--c-blue); color: var(--c-white); border-color: var(--c-blue); }
+  .cert__icon--red{ background: var(--c-red); color: var(--c-white); border-color: var(--c-red); }
+  .cert__icon--yellow{ background: var(--c-yellow); color: var(--c-bg-900); border-color: var(--c-yellow); }
+  .cert strong{ display:block; font-size:0.88rem; color: var(--c-white); line-height:1.2; }
+  .cert span{ font-size:0.78rem; color: var(--c-muted); }
+
+  /* Desktop: timeline centrada alternada (opcional, aquí mantenemos una columna para legibilidad) */
+  @media (min-width: 1024px){
+    .timeline{ max-width: 820px; }
+    .timeline::before{ left: 19px; } /* mantenemos lineal para no romper con contenido variable */
+  }
+</style>

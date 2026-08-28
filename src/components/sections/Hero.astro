@@ -1,0 +1,272 @@
+---
+import Button from "../ui/Button.astro";
+---
+
+<section id="inicio" class="hero bg-checker--subtle" aria-labelledby="hero-title">
+  <div class="checker-vignette" aria-hidden="true"></div>
+  <!-- blobs decorativos -->
+  <div class="hero__blob hero__blob--red" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--blue" aria-hidden="true"></div>
+  <div class="hero__blob hero__blob--yellow" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="eyebrow">Ingeniero en Informática · Duoc UC 2021-2024</span>
+
+      <h1 id="hero-title" class="hero__title">
+        <span class="hero__title-line hero__title-line--white">Tomás Ignacio</span>
+        <span class="hero__title-line hero__title-line--yellow">Moreno Molina</span>
+      </h1>
+
+      <p class="hero__subtitle">Ingeniero en Informática</p>
+
+      <p class="hero__desc text-balance">
+        Transformo datos y procesos en soluciones seguras y escalables.
+        Especializado en <strong>automatización</strong>, <strong>análisis de sistemas</strong>, <strong>Desarrollo FullStack</strong> y
+        <strong>ciberseguridad</strong> — con foco en resolver problemas reales, no solo código.
+      </p>
+
+      <div class="hero__ctas">
+        <Button href="#recorrido" variant="yellow">Ver recorrido ↓</Button>
+        <Button href="#hablemos" variant="ghost">Hablemos</Button>
+      </div>
+
+      <div class="hero__contacts" aria-label="Contactos rápidos">
+        <a href="https://www.linkedin.com/in/tomas-ignacio-moreno-molina-242956224" target="_blank" rel="noopener noreferrer" class="hero__contact" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.6c0-1.34-.48-2.26-1.67-2.26-0.91 0-1.45 0.61-1.69 1.2-0.09 0.21-0.11 0.5-0.11 0.8v5.86H9.88s0.05-9.5 0-10.48h3.55v1.49c0.47-0.73 1.32-1.77 3.22-1.77 2.35 0 4.11 1.54 4.11 4.84v5.92zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9.97h3.56v10.48z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Tomi880" target="_blank" rel="noopener noreferrer" class="hero__contact" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c0.5 0.09 0.68-0.22 0.68-0.48v-1.7c-2.77 0.6-3.36-1.18-3.36-1.18-0.45-1.15-1.11-1.46-1.11-1.46-0.91-0.62 0.07-0.61 0.07-0.61 1 0.07 1.53 1.03 1.53 1.03 0.89 1.53 2.34 1.09 2.91 0.83 0.09-0.65 0.35-1.09 0.63-1.34-2.22-0.25-4.56-1.11-4.56-4.95 0-1.09 0.39-1.99 1.03-2.69-0.1-0.25-0.45-1.27 0.1-2.65 0 0 0.84-0.27 2.75 1.02A9.3 9.3 0 0 1 12 7.43a9.3 9.3 0 0 1 2.5 0.34c1.91-1.29 2.75-1.02 2.75-1.02 0.55 1.38 0.2 2.4 0.1 2.65 0.64 0.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95 0.36 0.31 0.68 0.92 0.68 1.86v2.76c0 0.26 0.18 0.58 0.69 0.48A10 10 0 0 0 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:tomasmoreno47@gmail.com" class="hero__contact" aria-label="Enviar correo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11z"/><path d="M5 7l7 6 7-6"/></svg>
+          tomasmoreno47@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__card">
+        <!-- Placeholder avatar circo -->
+        <div class="hero__avatar">
+          <div class="hero__avatar-checker"></div>
+          <div class="hero__avatar-inner">
+            <span class="hero__avatar-initials">TM</span>
+            <span class="hero__avatar-sub">ING. INFORMÁTICA</span>
+          </div>
+          <!-- dots -->
+          <i class="hero__dot hero__dot--red"></i>
+          <i class="hero__dot hero__dot--blue"></i>
+          <i class="hero__dot hero__dot--yellow"></i>
+        </div>
+
+        <div class="hero__meta">
+          <div class="hero__meta-row">
+            <span class="hero__meta-label">Ubicación</span>
+            <span class="hero__meta-value">Santiago, Chile</span>
+          </div>
+          <div class="hero__meta-row">
+            <span class="hero__meta-label">Disponibilidad</span>
+            <span class="hero__meta-value hero__meta-value--working">● Trabajando</span>
+          </div>
+          <div class="hero__meta-row">
+            <span class="hero__meta-label">Stack favorito</span>
+            <span class="hero__meta-value">Python · Laravel · Astro</span>
+          </div>
+        </div>
+
+        <div class="hero__badge-row">
+          <span class="hero__mini-badge hero__mini-badge--red">Ciberseguridad</span>
+          <span class="hero__mini-badge hero__mini-badge--blue">Datos &amp; ETL</span>
+          <span class="hero__mini-badge hero__mini-badge--yellow">Automatización</span>
+          <span class="hero__mini-badge hero__mini-badge--red">FullStack</span>
+        </div>
+      </div>
+
+      <!-- figura flotante estilo Digital Circus -->
+      <div class="hero__float hero__float--1"></div>
+      <div class="hero__float hero__float--2"></div>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <i></i>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: var(--s-10) 0 var(--s-12) 0;
+    min-height: calc(100vh - var(--header-h));
+    display: flex; align-items: center;
+    overflow: clip;
+  }
+  .hero__blob {
+    position: absolute; border-radius: 50%; filter: blur(42px); opacity: 0.14; pointer-events: none;
+  }
+  .hero__blob--red { width: 420px; height: 420px; background: var(--c-red); top: -80px; right: -80px; }
+  .hero__blob--blue { width: 520px; height: 520px; background: var(--c-blue); bottom: -140px; left: -120px; }
+  .hero__blob--yellow { width: 260px; height: 260px; background: var(--c-yellow); top: 42%; left: 38%; opacity: 0.06; }
+
+  .hero__inner {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1fr; gap: var(--s-10);
+    align-items: center;
+  }
+  @media (min-width: 900px){
+    .hero__inner{ grid-template-columns: 1.15fr 0.85fr; gap: var(--s-12); }
+    .hero{ padding: var(--s-12) 0 var(--s-16) 0; }
+  }
+
+  .hero__content { max-width: 640px; }
+  .hero__title {
+    font-family: var(--ff-display);
+    font-size: var(--fs-hero);
+    line-height: 0.88; letter-spacing: -0.03em;
+    margin: var(--s-4) 0 var(--s-2) 0;
+    text-wrap: balance;
+  }
+  .hero__title-line { display: block; }
+  .hero__title-line--white {
+    color: var(--c-white);
+    text-shadow: 4px 4px 0 var(--c-bg-900), 7px 7px 0 rgba(0,0,0,0.4);
+    -webkit-text-stroke: 1px rgba(0,0,0,0.2);
+  }
+  .hero__title-line--yellow {
+    color: var(--c-yellow);
+    text-shadow: 4px 4px 0 var(--c-bg-900), 7px 7px 0 rgba(0,0,0,0.4);
+    -webkit-text-stroke: 1.2px var(--c-bg-900);
+    transform: rotate(-0.6deg);
+    display: inline-block;
+  }
+  .hero__subtitle {
+    font-family: var(--ff-display); font-size: clamp(1rem, 2.2vw, 1.25rem);
+    color: var(--c-muted); letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: var(--s-4);
+  }
+  .hero__desc {
+    color: var(--c-text); font-size: 1.05rem; line-height: 1.6;
+    opacity: 0.92; max-width: 56ch;
+  }
+  .hero__desc strong { color: var(--c-white); font-weight: 700; }
+  .hero__ctas {
+    display:flex; flex-wrap:wrap; gap: var(--s-3); margin-top: var(--s-6);
+  }
+  .hero__contacts {
+    display:flex; flex-wrap:wrap; gap: var(--s-2);
+    margin-top: var(--s-6);
+    padding-top: var(--s-5); border-top: 1px solid var(--c-border);
+  }
+  .hero__contact {
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.84rem; font-weight:600; color: var(--c-muted);
+    background: var(--c-surface); border:1px solid var(--c-border);
+    padding: 8px 12px; border-radius: var(--r-pill);
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .hero__contact:hover{ color: var(--c-white); border-color: var(--c-border-strong); background: rgba(255,255,255,0.08); transform: translateY(-1px); }
+  .hero__contact--phone{ color: var(--c-yellow); border-color: rgba(255,210,63,0.28); }
+  .hero__contact--phone:hover{ color: var(--c-bg-900); background: var(--c-yellow); border-color: var(--c-yellow); }
+
+  /* Visual */
+  .hero__visual { position: relative; display:flex; justify-content:center; }
+  .hero__card {
+    width: min(100%, 380px);
+    background: var(--c-surface);
+    border: 2px solid var(--c-white);
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+    box-shadow: var(--shadow-card), 8px 8px 0 rgba(0,0,0,0.22);
+    position: relative; overflow: hidden;
+  }
+  .hero__card::after{
+    content:""; position:absolute; right:-12px; bottom:-12px; width:140px; height:44px;
+    background: radial-gradient(circle, var(--c-red) 5.5px, transparent 6px) 0 0 / 18px 18px;
+    opacity:0.85; pointer-events:none;
+  }
+  .hero__avatar {
+    position: relative;
+    background: var(--c-bg-900);
+    border: 2px solid var(--c-border-strong);
+    border-radius: 16px; overflow: hidden;
+    height: 210px; display:grid; place-items:center;
+    margin-bottom: var(--s-5);
+  }
+  .hero__avatar-checker{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(45deg, rgba(255,255,255,0.07) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(255,255,255,0.07) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.07) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.07) 75%);
+    background-size: 28px 28px;
+    background-position: 0 0, 0 14px, 14px -14px, -14px 0;
+  }
+  .hero__avatar-inner{
+    position:relative; z-index:1; text-align:center;
+    background: var(--c-white); color: var(--c-bg-900);
+    padding: 18px 24px; border-radius: 14px;
+    border: 3px solid var(--c-bg-900);
+    box-shadow: 4px 4px 0 var(--c-bg-900);
+    transform: rotate(-1deg);
+  }
+  .hero__avatar-initials{
+    font-family: var(--ff-display); font-size: 2.6rem; line-height:1; display:block;
+    color: var(--c-bg-900);
+    text-shadow: 2px 2px 0 var(--c-yellow);
+  }
+  .hero__avatar-sub{
+    font-size:0.68rem; font-weight:800; letter-spacing:0.12em; color: var(--c-muted-2);
+    display:block; margin-top:4px;
+  }
+  .hero__dot{
+    position:absolute; width:12px; height:12px; border-radius:50%; border:2px solid var(--c-white);
+    z-index:2;
+  }
+  .hero__dot--red{ background: var(--c-red); top:14px; left:14px; }
+  .hero__dot--blue{ background: var(--c-blue); top:14px; right:14px; }
+  .hero__dot--yellow{ background: var(--c-yellow); bottom:14px; right:18px; width:10px; height:10px; }
+
+  .hero__meta{ display:grid; gap: var(--s-3); margin-bottom: var(--s-5); }
+  .hero__meta-row{ display:flex; justify-content:space-between; align-items:center; gap: var(--s-3); font-size:0.84rem; }
+  .hero__meta-label{ color: var(--c-muted); font-weight:600; font-size:0.78rem; letter-spacing:0.04em; text-transform:uppercase; }
+  .hero__meta-value{ color: var(--c-white); font-weight:700; text-align:right; }
+  .hero__meta-value--ok{ color: #4ADE80; }
+  .hero__meta-value--working{ color: var(--c-blue); }
+  .hero__badge-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .hero__mini-badge{
+    font-size:0.7rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
+    padding:6px 10px; border-radius: var(--r-pill); border:1px solid transparent;
+  }
+  .hero__mini-badge--red{ background: rgba(230,57,70,0.14); color: var(--c-red); border-color: rgba(230,57,70,0.28); }
+  .hero__mini-badge--blue{ background: rgba(67,97,238,0.14); color: var(--c-blue); border-color: rgba(67,97,238,0.28); }
+  .hero__mini-badge--yellow{ background: rgba(255,210,63,0.14); color: var(--c-yellow); border-color: rgba(255,210,63,0.28); }
+
+  .hero__float{
+    position:absolute; border-radius:50%; border:2px solid var(--c-white); pointer-events:none;
+  }
+  .hero__float--1{ width:18px; height:18px; background: var(--c-red); top: -8px; right: 18%; box-shadow: 0 4px 12px rgba(230,57,70,0.35); }
+  .hero__float--2{ width:12px; height:12px; background: var(--c-yellow); bottom: 18%; left: -6px; }
+
+  .hero__scroll{
+    position:absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+    color: var(--c-muted); font-size:0.68rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    opacity:0.7; z-index:2;
+  }
+  .hero__scroll i{
+    width:1px; height:28px; background: linear-gradient(180deg, var(--c-muted), transparent);
+    display:block; animation: scrollLine 1.8s infinite;
+  }
+  @keyframes scrollLine{ 0%{ transform: scaleY(0); transform-origin: top; } 50%{ transform: scaleY(1); transform-origin: top; } 51%{ transform-origin: bottom; } 100%{ transform: scaleY(0); transform-origin: bottom; } }
+  @media (prefers-reduced-motion: reduce){ .hero__scroll i{ animation:none; } .hero__title-line--yellow{ transform:none; } }
+  @media (max-width: 900px){
+    .hero__visual{ order:-1; }
+    .hero__card{ width: min(100%, 420px); }
+    .hero__title{ font-size: clamp(2.2rem, 10vw, 3.2rem); }
+  }
+</style>

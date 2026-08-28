@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="18" fill="#0A0A0A"/>
+  <!-- checker mini -->
+  <g opacity="0.9">
+    <rect x="12" y="12" width="18" height="18" fill="white"/>
+    <rect x="30" y="30" width="18" height="18" fill="white"/>
+    <rect x="48" y="12" width="18" height="18" fill="white"/>
+    <rect x="66" y="30" width="18" height="18" fill="white"/>
+    <rect x="12" y="48" width="18" height="18" fill="white"/>
+    <rect x="30" y="66" width="18" height="18" fill="white"/>
+    <rect x="48" y="48" width="18" height="18" fill="white"/>
+    <rect x="66" y="66" width="18" height="18" fill="white"/>
+  </g>
+  <text x="50" y="58" text-anchor="middle" font-family="Bungee, sans-serif" font-size="36" fill="#FFD23F" stroke="#0A0A0A" stroke-width="1.5">TM</text>
+  <circle cx="74" cy="74" r="6" fill="#E63946" stroke="white" stroke-width="1.5"/>
+  <circle cx="20" cy="78" r="4" fill="#4361EE" stroke="white" stroke-width="1"/>
+</svg>

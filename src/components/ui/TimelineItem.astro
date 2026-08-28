@@ -1,0 +1,108 @@
+---
+import Badge from "./Badge.astro";
+interface Props {
+  period: string;
+  title: string;
+  place: string;
+  description?: string;
+  accent?: "red" | "blue" | "yellow";
+  type?: string;
+  current?: boolean;
+}
+const { period, title, place, description, accent = "yellow", type, current = false } = Astro.props;
+---
+
+<div class={`timeline-item timeline-item--${accent} ${current ? "timeline-item--current" : ""}`}>
+  <div class="timeline-item__dot" aria-hidden="true"><span></span></div>
+  <div class="timeline-item__card">
+    <div class="timeline-item__head">
+      <Badge variant={accent}>{period}</Badge>
+      {type && <span class="timeline-item__type">{type}</span>}
+      {current && <span class="timeline-item__current">Actual</span>}
+    </div>
+    <h3 class="timeline-item__title">{title}</h3>
+    <p class="timeline-item__place">{place}</p>
+    {description && <p class="timeline-item__desc">{description}</p>}
+    <slot />
+  </div>
+</div>
+
+<style>
+  .timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: var(--s-4);
+    padding-bottom: var(--s-8);
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item__dot {
+    position: relative;
+    display: flex; justify-content: center;
+  }
+  .timeline-item__dot::before {
+    content:""; position: absolute; top: 14px; bottom: -32px; left: 50%; width: 2px;
+    background: var(--c-border-strong); transform: translateX(-50%);
+  }
+  .timeline-item:last-child .timeline-item__dot::before { display: none; }
+  .timeline-item__dot span {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--dot-bg, var(--c-yellow));
+    border: 3px solid var(--c-white);
+    box-shadow: 0 0 0 4px var(--c-bg-900), 0 0 12px var(--dot-glow);
+    margin-top: 6px; flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+  .timeline-item--red { --dot-bg: var(--c-red); --dot-glow: rgba(230,57,70,0.35); }
+  .timeline-item--blue { --dot-bg: var(--c-blue); --dot-glow: rgba(67,97,238,0.35); }
+  .timeline-item--yellow { --dot-bg: var(--c-yellow); --dot-glow: rgba(255,210,63,0.35); }
+  .timeline-item--current .timeline-item__dot span {
+    width: 22px; height: 22px; border-width: 3px;
+    box-shadow: 0 0 0 5px var(--c-bg-900), 0 0 18px var(--dot-glow);
+    animation: pulse 2.2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  .timeline-item__card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-md);
+    padding: var(--s-5);
+    position: relative;
+    transition: border-color var(--dur-normal) var(--ease-out), transform var(--dur-normal) var(--ease-out);
+  }
+  .timeline-item__card:hover { border-color: var(--c-border-strong); transform: translateX(2px); }
+  .timeline-item--current .timeline-item__card {
+    border-color: rgba(255,210,63,0.35);
+    background: linear-gradient(180deg, rgba(255,210,63,0.08), var(--c-surface) 55%);
+  }
+  .timeline-item__head {
+    display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2);
+    margin-bottom: var(--s-3);
+  }
+  .timeline-item__type {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--c-muted); background: rgba(255,255,255,0.06); padding: 4px 8px; border-radius: var(--r-pill);
+    border: 1px solid var(--c-border);
+  }
+  .timeline-item__current {
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--c-bg-900); background: var(--c-yellow); padding: 4px 10px; border-radius: var(--r-pill);
+  }
+  .timeline-item__title {
+    font-family: var(--ff-display); font-size: 1.1rem; line-height: 1.15;
+    color: var(--c-white); margin-bottom: 4px;
+  }
+  .timeline-item__place {
+    font-weight: 600; color: var(--c-muted); font-size: 0.9rem; margin-bottom: var(--s-2);
+  }
+  .timeline-item__desc {
+    color: var(--c-text); font-size: 0.92rem; line-height: 1.55; opacity: 0.92;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .timeline-item--current .timeline-item__dot span{ animation:none; }
+  }
+  /* Desktop: alternancia visual se maneja en Recorrido.astro */
+</style>

@@ -1,0 +1,123 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Card from "../ui/Card.astro";
+---
+
+<section id="sobre-mi" class="section sobre-mi" aria-labelledby="sobre-mi-title">
+  <div class="container">
+    <SectionTitle
+      eyebrow="Sobre mí"
+      title="Ingeniero que resuelve, no solo que programa"
+      subtitle="Motivado por el análisis de sistemas, la seguridad informática y la automatización de procesos complejos."
+      accent="yellow"
+    />
+
+    <div class="sobre-mi__grid" id="sobre-mi-title">
+      <div class="sobre-mi__main">
+        <Card accent="yellow">
+          <p class="sobre-mi__lead">
+            Soy <strong>Ingeniero en Informática</strong> titulado en Duoc UC (2021-2024), con experiencia que va desde soporte TI en terreno hasta desarrollo fullstack y análisis de datos. Me mueve entender el sistema completo — no solo el código — y convertir dolor operacional en software que realmente se usa.
+          </p>
+          <p class="sobre-mi__text">
+            Me caracterizo por ser <strong>proactivo, responsable y adaptable</strong>, con capacidad para trabajar en equipo y bajo presión. Disfruto los entornos desafiantes donde hay que aprender rápido, documentar bien y dejar el sistema mejor de lo que lo encontré. Mi foco actual: <em>automatización, ciberseguridad y plataformas web mantenibles</em> — con herramientas modernas pero sin miedo al legacy.
+          </p>
+          <p class="sobre-mi__text">
+            Busco aplicar mis conocimientos en equipos que valoren la mejora continua, la innovación con criterio y el trabajo bien hecho por sobre todo.
+          </p>
+
+          <div class="sobre-mi__values">
+            <span class="value value--red">● Proactivo</span>
+            <span class="value value--blue">● Responsable</span>
+            <span class="value value--yellow">● Adaptable</span>
+            <span class="value value--ghost">● Trabajo en equipo</span>
+            <span class="value value--ghost">● Bajo presión</span>
+          </div>
+        </Card>
+      </div>
+
+      <div class="sobre-mi__side">
+        <Card accent="red" hover={false}>
+          <div class="stat">
+            <span class="stat__num">6+</span>
+            <span class="stat__label">Experiencias en TI<br/>soporte · datos · desarrollo</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">2</span>
+            <span class="stat__label">Prácticas en Bricsa<br/>Soporte + ETL/Tesis GPT</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">Actual</span>
+            <span class="stat__label">Desarrollador FullStack<br/>Kastor · CakePHP 1.2</span>
+          </div>
+        </Card>
+
+        <Card accent="blue" hover={false}>
+          <h3 class="side__title">Enfoque</h3>
+          <ul class="side__list">
+            <li>Análisis de sistemas y automatización ETL</li>
+            <li>Ciberseguridad ofensiva/defensiva (Nmap, Metasploit, Nessus)</li>
+            <li>Desarrollo web fullstack (Laravel, Node.js, Astro)</li>
+            <li>Harness engineering · SDD · MCP · Plugins Opencode</li>
+          </ul>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sobre-mi { background: var(--c-bg-800); }
+  .sobre-mi__grid {
+    display: grid; grid-template-columns: 1fr; gap: var(--s-6);
+  }
+  @media (min-width: 900px){
+    .sobre-mi__grid{ grid-template-columns: 1.6fr 0.9fr; gap: var(--s-8); align-items: start; }
+  }
+  .sobre-mi__lead {
+    font-size: 1.08rem; line-height: 1.6; color: var(--c-white); font-weight: 500;
+    margin-bottom: var(--s-4);
+  }
+  .sobre-mi__lead strong { color: var(--c-yellow); }
+  .sobre-mi__text {
+    color: var(--c-text); line-height: 1.7; margin-bottom: var(--s-4); opacity: 0.92;
+  }
+  .sobre-mi__text strong { color: var(--c-white); }
+  .sobre-mi__text em { color: var(--c-yellow); font-style: normal; font-weight: 600; }
+  .sobre-mi__values {
+    display:flex; flex-wrap:wrap; gap: var(--s-2);
+    margin-top: var(--s-6); padding-top: var(--s-5); border-top: 1px solid var(--c-border);
+  }
+  .value{
+    font-size:0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    padding:6px 10px; border-radius: var(--r-pill); border:1px solid var(--c-border);
+  }
+  .value--red{ background: rgba(230,57,70,0.12); color: var(--c-red); border-color: rgba(230,57,70,0.24); }
+  .value--blue{ background: rgba(67,97,238,0.12); color: var(--c-blue); border-color: rgba(67,97,238,0.24); }
+  .value--yellow{ background: var(--c-yellow); color: var(--c-bg-900); border-color: var(--c-yellow); }
+  .value--ghost{ background: rgba(255,255,255,0.06); color: var(--c-muted); }
+
+  .sobre-mi__side{ display:grid; gap: var(--s-6); align-content:start; }
+  .stat{ padding: var(--s-4) 0; border-bottom:1px solid var(--c-border); }
+  .stat:last-child{ border-bottom:none; padding-bottom:0; }
+  .stat:first-child{ padding-top:0; }
+  .stat__num{
+    font-family: var(--ff-display); font-size:1.9rem; line-height:1; color: var(--c-white);
+    display:block;
+  }
+  .stat:first-child .stat__num{ color: var(--c-yellow); }
+  .stat:nth-child(2) .stat__num{ color: var(--c-red); }
+  .stat:nth-child(3) .stat__num{ color: var(--c-blue); font-size:1.3rem; }
+  .stat__label{ font-size:0.82rem; color: var(--c-muted); line-height:1.4; display:block; margin-top:4px; font-weight:500; }
+  .side__title{ font-family: var(--ff-display); font-size:1rem; color: var(--c-white); margin-bottom: var(--s-3); }
+  .side__list{ list-style:none; padding:0; display:grid; gap: var(--s-2); }
+  .side__list li{
+    position:relative; padding-left:18px; font-size:0.88rem; color: var(--c-text); line-height:1.5;
+  }
+  .side__list li::before{
+    content:""; position:absolute; left:0; top:8px; width:8px; height:8px; border-radius:50%;
+    background: var(--c-yellow); border:1px solid var(--c-white);
+  }
+  .side__list li:nth-child(2)::before{ background: var(--c-red); }
+  .side__list li:nth-child(3)::before{ background: var(--c-blue); }
+  .side__list li:nth-child(4)::before{ background: var(--c-white); }
+</style>

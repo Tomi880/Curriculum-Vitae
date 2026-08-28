@@ -1,0 +1,51 @@
+---
+interface Props {
+  accent?: "red" | "blue" | "yellow" | "none";
+  hover?: boolean;
+}
+const { accent = "none", hover = true } = Astro.props;
+---
+
+<article class={`card card--${accent} ${hover ? "card--hover" : ""}`}>
+  <slot />
+</article>
+
+<style>
+  .card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal) var(--ease-out), border-color var(--dur-normal) var(--ease-out);
+  }
+  .card--hover:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-border-strong);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.06) inset;
+  }
+  /* Polka dots decorativo inferior */
+  .card::after {
+    content:"";
+    position: absolute;
+    right: -10px; bottom: -10px;
+    width: 120px; height: 42px;
+    opacity: 0.0;
+    transition: opacity var(--dur-normal) var(--ease-out);
+    background-image: radial-gradient(circle, var(--dot, var(--c-red)) 5.5px, transparent 6px);
+    background-size: 18px 18px;
+    pointer-events: none;
+  }
+  .card--hover:hover::after { opacity: 0.9; }
+  .card--red { --dot: var(--c-red); }
+  .card--blue { --dot: var(--c-blue); }
+  .card--yellow { --dot: var(--c-yellow); }
+  .card--none::after { display: none; }
+
+  /* Borde superior acento */
+  .card--red { border-top: 3px solid var(--c-red); }
+  .card--blue { border-top: 3px solid var(--c-blue); }
+  .card--yellow { border-top: 3px solid var(--c-yellow); }
+</style>

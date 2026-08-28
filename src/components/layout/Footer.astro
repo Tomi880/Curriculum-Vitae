@@ -1,0 +1,109 @@
+---
+---
+
+<footer class="footer">
+  <div class="divider-tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo" aria-hidden="true">TM</span>
+      <div>
+        <strong>Tomás Ignacio Moreno Molina</strong>
+        <span>Ingeniero en Informática · Santiago, Chile</span>
+      </div>
+    </div>
+
+    <p class="footer__copy">© 2026 Tomás Moreno. Todos los derechos reservados.</p>
+
+    <div class="footer__actions">
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/in/tomas-ignacio-moreno-molina-242956224" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Tomás Moreno" class="footer__icon">
+          <!-- LinkedIn -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.6c0-1.34-.48-2.26-1.67-2.26-0.91 0-1.45 0.61-1.69 1.2-0.09 0.21-0.11 0.5-0.11 0.8v5.86H9.88s0.05-9.5 0-10.48h3.55v1.49c0.47-0.73 1.32-1.77 3.22-1.77 2.35 0 4.11 1.54 4.11 4.84v5.92zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9.97h3.56v10.48z"/></svg>
+        </a>
+        <a href="https://github.com/Tomi880" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Tomás Moreno" class="footer__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c0.5 0.09 0.68-0.22 0.68-0.48v-1.7c-2.77 0.6-3.36-1.18-3.36-1.18-0.45-1.15-1.11-1.46-1.11-1.46-0.91-0.62 0.07-0.61 0.07-0.61 1 0.07 1.53 1.03 1.53 1.03 0.89 1.53 2.34 1.09 2.91 0.83 0.09-0.65 0.35-1.09 0.63-1.34-2.22-0.25-4.56-1.11-4.56-4.95 0-1.09 0.39-1.99 1.03-2.69-0.1-0.25-0.45-1.27 0.1-2.65 0 0 0.84-0.27 2.75 1.02A9.3 9.3 0 0 1 12 7.43a9.3 9.3 0 0 1 2.5 0.34c1.91-1.29 2.75-1.02 2.75-1.02 0.55 1.38 0.2 2.4 0.1 2.65 0.64 0.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95 0.36 0.31 0.68 0.92 0.68 1.86v2.76c0 0.26 0.18 0.58 0.69 0.48A10 10 0 0 0 12 2z"/></svg>
+        </a>
+        <a href="mailto:tomasmoreno47@gmail.com" aria-label="Enviar correo a Tomás Moreno" class="footer__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11z"/><path d="M5 7l7 6 7-6"/></svg>
+        </a>
+      </div>
+      <a href="#inicio" class="footer__to-top" aria-label="Volver arriba al inicio">
+        Volver arriba
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--c-bg-900);
+    border-top: 1px solid var(--c-border);
+    padding-bottom: var(--s-6);
+  }
+  .footer__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+    padding-top: var(--s-8);
+    align-items: center;
+  }
+  .footer__brand {
+    display:flex; align-items:center; gap: var(--s-3);
+  }
+  .footer__logo{
+    width:40px; height:40px; border-radius:10px; display:grid; place-items:center;
+    font-family: var(--ff-display); background: var(--c-white); color: var(--c-bg-900);
+    border:2px solid var(--c-white); flex-shrink:0;
+  }
+  .footer__brand div { display:flex; flex-direction:column; line-height:1.2; }
+  .footer__brand strong { font-family: var(--ff-display); font-size:0.95rem; color: var(--c-white); }
+  .footer__brand span { font-size:0.78rem; color: var(--c-muted); font-weight:600; }
+  .footer__copy {
+    font-size:0.85rem; color: var(--c-muted); text-align:left;
+  }
+  .footer__actions {
+    display:flex; align-items:center; justify-content:space-between; gap: var(--s-4);
+    flex-wrap: wrap;
+  }
+  .footer__social{ display:flex; gap: var(--s-2); }
+  .footer__icon{
+    width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
+    background: var(--c-surface); border:1px solid var(--c-border); color: var(--c-muted);
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .footer__icon:hover{ color: var(--c-white); border-color: var(--c-white); background: rgba(255,255,255,0.08); transform: translateY(-1px); }
+  .footer__to-top{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.85rem; font-weight:700; letter-spacing:0.02em;
+    background: var(--c-white); color: var(--c-bg-900);
+    padding: 10px 16px; border-radius: var(--r-pill); border:2px solid var(--c-white);
+    transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .footer__to-top:hover{ background: var(--c-yellow); border-color: var(--c-yellow); transform: translateY(-1px); }
+  .footer__to-top:active{ transform: scale(0.97); }
+
+  @media (min-width: 768px){
+    .footer__inner{ grid-template-columns: 1fr auto; }
+    .footer__copy{ text-align:center; grid-column: 1 / -1; order: 3; border-top:1px solid var(--c-border); padding-top: var(--s-5); margin-top: var(--s-2); }
+    .footer__actions{ justify-content:flex-end; }
+  }
+  @media (min-width: 1024px){
+    .footer__inner{ grid-template-columns: 1.2fr 1fr auto; }
+    .footer__copy{ grid-column:auto; order:0; border-top:none; padding-top:0; margin-top:0; text-align:center; }
+  }
+</style>
+
+<script is:inline>
+  // Scroll suave fallback para "Volver arriba" si JS deshabilita smooth
+  document.querySelector('.footer__to-top')?.addEventListener('click', (e)=>{
+    const href = e.currentTarget.getAttribute('href');
+    if(href === '#inicio'){
+      e.preventDefault();
+      const el = document.getElementById('inicio');
+      if(el) el.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      else window.scrollTo({ top:0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+      history.pushState(null,'', href);
+    }
+  });
+</script>

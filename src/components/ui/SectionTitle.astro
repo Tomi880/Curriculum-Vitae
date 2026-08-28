@@ -1,0 +1,57 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  accent?: "red" | "blue" | "yellow";
+  align?: "left" | "center";
+}
+const { eyebrow, title, subtitle, accent = "yellow", align = "left" } = Astro.props;
+---
+
+<div class={`section-title section-title--${align} section-title--${accent}`}>
+  {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+  <h2 class="section-title__heading">{title}</h2>
+  {subtitle && <p class="section-title__subtitle">{subtitle}</p>}
+  <div class="section-title__dots" aria-hidden="true">
+    <i></i><i></i><i></i>
+  </div>
+</div>
+
+<style>
+  .section-title { margin-bottom: var(--s-10); }
+  .section-title--center { text-align: center; }
+  .section-title--center .section-title__subtitle { margin-inline: auto; }
+  .section-title--center .section-title__dots { justify-content: center; }
+  .eyebrow { margin-bottom: var(--s-4); }
+  .section-title__heading {
+    font-family: var(--ff-display);
+    font-size: var(--fs-h2);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--c-white);
+    /* Efecto 3D circo */
+    text-shadow: 3px 3px 0 var(--c-bg-900), 6px 6px 0 rgba(0,0,0,0.35);
+    -webkit-text-stroke: 1px rgba(0,0,0,0.25);
+    text-wrap: balance;
+  }
+  .section-title__subtitle {
+    margin-top: var(--s-3);
+    color: var(--c-muted);
+    font-size: 1.05rem;
+    max-width: 58ch;
+    line-height: 1.5;
+  }
+  .section-title__dots {
+    display: flex; gap: 8px; margin-top: var(--s-4);
+  }
+  .section-title__dots i {
+    width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--c-white);
+  }
+  .section-title--red .section-title__dots i:nth-child(1){ background: var(--c-red); }
+  .section-title--blue .section-title__dots i:nth-child(1){ background: var(--c-blue); }
+  .section-title--yellow .section-title__dots i:nth-child(1){ background: var(--c-yellow); }
+  .section-title__dots i:nth-child(2){ background: var(--c-blue); opacity: 0.9; }
+  .section-title__dots i:nth-child(3){ background: var(--c-red); opacity: 0.9; }
+  .section-title--red .section-title__heading { text-decoration-color: var(--c-red); }
+</style>

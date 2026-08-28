@@ -1,0 +1,53 @@
+/* Patrón ajedrez Digital Circus — CSS puro sin imágenes */
+.bg-checker {
+  --checker-size: 40px;
+  --checker-c1: #ffffff;
+  --checker-c2: #1a1a1a;
+  background-color: var(--checker-c2);
+  background-image:
+    linear-gradient(45deg, var(--checker-c1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--checker-c1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--checker-c1) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--checker-c1) 75%);
+  background-size: var(--checker-size) var(--checker-size);
+  background-position: 0 0, 0 calc(var(--checker-size)/2), calc(var(--checker-size)/2) calc(var(--checker-size)/-2), calc(var(--checker-size)/-2) 0;
+}
+
+.bg-checker--subtle {
+  --checker-size: 48px;
+  background-color: var(--c-bg-900);
+  /* Checker blanco a ~6% para no saturar */
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.06) 75%);
+  background-size: var(--checker-size) var(--checker-size);
+  background-position: 0 0, 0 calc(var(--checker-size)/2), calc(var(--checker-size)/2) calc(var(--checker-size)/-2), calc(var(--checker-size)/-2) 0;
+  position: relative;
+}
+
+.bg-checker--subtle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 70% at 50% 30%, rgba(230,57,70,0.06), transparent 60%),
+              radial-gradient(ellipse 60% 50% at 80% 70%, rgba(67,97,238,0.05), transparent 60%),
+              radial-gradient(ellipse 50% 40% at 10% 80%, rgba(255,210,63,0.04), transparent 60%);
+  pointer-events: none;
+}
+
+/* Overlay viñeta para hero */
+.checker-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 40%, rgba(10,10,10,0.55) 85%);
+  pointer-events: none;
+}
+
+/* Bordes polka dots — se usa como ::after en cards */
+.polka-dots {
+  background-image: radial-gradient(circle, var(--dot-color, var(--c-red)) 5.5px, transparent 6.5px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}

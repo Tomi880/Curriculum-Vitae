@@ -1,0 +1,148 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Card from "../ui/Card.astro";
+import Badge from "../ui/Badge.astro";
+---
+
+<section id="proyectos" class="section proyectos" aria-labelledby="proyectos-title">
+  <div class="container">
+    <SectionTitle
+      eyebrow="Proyectos destacados"
+      title="Trabajos con componente técnico real"
+      subtitle="No son demos — son problemas operativos resueltos con código que pasó a producción o validación directa."
+      accent="blue"
+    />
+
+    <div class="proyectos__grid" id="proyectos-title">
+      <Card accent="red">
+        <div class="proj__head">
+          <span class="proj__icon proj__icon--red" aria-hidden="true">⬡</span>
+          <Badge variant="red">ETL · Bricsa / Unysoft</Badge>
+        </div>
+        <h3 class="proj__title">ETL BC3 — Presupuestos de construcción</h3>
+        <p class="proj__desc">Parser y transformador ETL para archivos <strong>BC3</strong> (estándar de presupuestos). Normalización, validación y carga a MySQL para consumo interno. Automatiza lo que antes era manual y propenso a error.</p>
+        <div class="proj__stack">
+          <Badge variant="ghost">Python</Badge>
+          <Badge variant="ghost">Node.js</Badge>
+          <Badge variant="ghost">MySQL</Badge>
+          <Badge variant="ghost">BC3</Badge>
+          <Badge variant="ghost">ETL</Badge>
+        </div>
+        <div class="proj__meta">
+          <span>Rol: Desarrollo ETL + documentación</span>
+          <span>Impacto: horas → minutos</span>
+        </div>
+      </Card>
+
+      <Card accent="blue">
+        <div class="proj__head">
+          <span class="proj__icon proj__icon--blue" aria-hidden="true">◈</span>
+          <Badge variant="blue">Tesis · API GPT</Badge>
+        </div>
+        <h3 class="proj__title">Tesis GPT + Laravel / Node / MySQL</h3>
+        <p class="proj__desc">Integración con <strong>API GPT</strong> para automatizar generación y validación de contenido/procesos. Backend híbrido <strong>Laravel + Node.js</strong>, persistencia MySQL, orquestación de prompts y manejo de costos/latencia.</p>
+        <div class="proj__stack">
+          <Badge variant="ghost">GPT API</Badge>
+          <Badge variant="ghost">Laravel</Badge>
+          <Badge variant="ghost">Node.js</Badge>
+          <Badge variant="ghost">MySQL</Badge>
+          <Badge variant="ghost">Prompt Eng.</Badge>
+        </div>
+        <div class="proj__meta">
+          <span>Rol: Fullstack + integración IA</span>
+          <span>Enfoque: automatización con criterio</span>
+        </div>
+      </Card>
+
+      <Card accent="yellow">
+        <div class="proj__head">
+          <span class="proj__icon proj__icon--yellow" aria-hidden="true">▦</span>
+          <Badge variant="yellow">LarrainVial · Datos</Badge>
+        </div>
+        <h3 class="proj__title">Análisis Excel vs PDF a gran escala</h3>
+        <p class="proj__desc">Comparativa masiva entre planillas <strong>Excel</strong> y reportes <strong>PDF</strong> para validar consistencia financiera. Detección de discrepancias, reportería y validación para toma de decisiones en ambiente regulado.</p>
+        <div class="proj__stack">
+          <Badge variant="ghost">Excel</Badge>
+          <Badge variant="ghost">PDF parsing</Badge>
+          <Badge variant="ghost">Validación</Badge>
+          <Badge variant="ghost">Reporting</Badge>
+        </div>
+        <div class="proj__meta">
+          <span>Rol: Análisis y validación</span>
+          <span>Dominio: financiero</span>
+        </div>
+      </Card>
+
+      <Card accent="blue">
+        <div class="proj__head">
+          <span class="proj__icon proj__icon--blue" aria-hidden="true">⬢</span>
+          <Badge variant="ghost">MINSAL · Sotero del Río</Badge>
+        </div>
+        <h3 class="proj__title">Despliegue masivo HP + Dominio MINSAL</h3>
+        <p class="proj__desc">Instalación y renovación de <strong>equipos HP</strong> en hospital, integración a <strong>dominio ministerial</strong>, migración de datos de usuarios y hardening básico. Trabajo en terreno con criticidad operativa real.</p>
+        <div class="proj__stack">
+          <Badge variant="ghost">Deploy</Badge>
+          <Badge variant="ghost">HP</Badge>
+          <Badge variant="ghost">Active Directory</Badge>
+          <Badge variant="ghost">Windows</Badge>
+          <Badge variant="ghost">Migración</Badge>
+        </div>
+        <div class="proj__meta">
+          <span>Rol: Instalación + integración</span>
+          <span>Entorno: hospital / MINSAL</span>
+        </div>
+      </Card>
+    </div>
+
+    <div class="proyectos__foot">
+      <p>¿Quieres ver el código o conversar el approach? Hablemos de cómo lo resolvería para tu caso.</p>
+      <a href="#hablemos" class="proyectos__cta glitch-hover">→ Ir a contacto</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proyectos { background: var(--c-bg-800); }
+  .proyectos__grid {
+    display:grid; grid-template-columns: 1fr; gap: var(--s-6);
+  }
+  @media (min-width: 760px){ .proyectos__grid{ grid-template-columns: repeat(2, 1fr); } }
+  .proj__head{ display:flex; align-items:center; justify-content:space-between; gap: var(--s-2); margin-bottom: var(--s-4); }
+  .proj__icon{
+    width:36px; height:36px; border-radius:10px; display:grid; place-items:center;
+    font-size:1rem; border:1px solid var(--c-border); flex-shrink:0;
+  }
+  .proj__icon--red{ background: var(--c-red); color: var(--c-white); border-color: var(--c-red); }
+  .proj__icon--blue{ background: var(--c-blue); color: var(--c-white); border-color: var(--c-blue); }
+  .proj__icon--yellow{ background: var(--c-yellow); color: var(--c-bg-900); border-color: var(--c-yellow); }
+  .proj__title{
+    font-family: var(--ff-display); font-size:1.15rem; line-height:1.15; color: var(--c-white);
+    margin-bottom: var(--s-2);
+  }
+  .proj__desc{
+    font-size:0.9rem; color: var(--c-text); line-height:1.6; opacity:0.92;
+    margin-bottom: var(--s-4);
+  }
+  .proj__desc strong{ color: var(--c-white); }
+  .proj__stack{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom: var(--s-4); }
+  .proj__meta{
+    display:flex; flex-wrap:wrap; gap: var(--s-3);
+    padding-top: var(--s-3); border-top:1px solid var(--c-border);
+    font-size:0.78rem; font-weight:600; color: var(--c-muted);
+  }
+  .proj__meta span{ display:inline-flex; align-items:center; gap:6px; }
+  .proj__meta span::before{ content:"●"; font-size:0.5rem; color: var(--c-yellow); }
+
+  .proyectos__foot{
+    margin-top: var(--s-8);
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap: var(--s-4);
+    background: var(--c-surface); border:1px solid var(--c-border); border-radius: var(--r-md);
+    padding: var(--s-5) var(--s-6);
+  }
+  .proyectos__foot p{ font-size:0.92rem; color: var(--c-muted); }
+  .proyectos__cta{
+    font-weight:800; color: var(--c-yellow); font-size:0.9rem; letter-spacing:0.02em;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .proyectos__cta:hover{ color: var(--c-white); }
+</style>
